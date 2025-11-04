@@ -21,5 +21,7 @@ Descrição: O presente projeto tem como objetivo a constituição de uma API pa
 -	Ano de publicação entre 1900 e o ano atual
 
 #Tratamento de erros:
+
 -O endpoint GET e DELETE por ID devem retornar o código de status 404 Not Found se o livro com o ID fornecido não existir
+
 -O endpoint POST deve verificar se o ID fornecido já existe e retornar um 400 Bad Request caso haja duplicidade
