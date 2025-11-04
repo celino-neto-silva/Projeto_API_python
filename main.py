@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 
-from database import inicializar_db
+from database import init_db
 from routers import livros
 
 # Cria a aplicação FastAPI
@@ -16,7 +16,7 @@ app = FastAPI(
 # Evento executado quando a aplicação inicia
 @app.on_event("startup")
 def startup():
-    inicializar_db()
+    init_db()
 
 
 # Regista o router de livros
