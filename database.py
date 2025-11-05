@@ -12,6 +12,7 @@ def get_db():
         yield conn
     finally:
         conn.close()
+   
 
 
 # Criação da tabela de livros, se não existir
