@@ -31,7 +31,7 @@ def listar_livros():
 
 # ==================== GET /livros/{livro_id} ====================
 
-@router.get("/{livro_id}", response_model=LivroResposta)
+@router.get("livros/{livro_id}", response_model=LivroResposta)
 def obter_livro(livro_id: int):
     """
     Retorna os detalhes de um livro específico, identificado pelo seu ID único.
@@ -97,7 +97,11 @@ def apagar_livro(livro_id: int):
                 status_code=404,
                 detail=f"Livro com ID {livro_id} não encontrado"
             )
-
+        
+        return {
+            "mensagem": f"Livro com ID {livro_id} removido com sucesso",
+            "sucesso": True
+        }
 # ==================== PUT /livros/{livro_id} ====================
 
 @router.put("/{livro_id}", response_model=LivroResposta)
