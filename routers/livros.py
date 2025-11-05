@@ -67,8 +67,8 @@ def criar_livro(livro: LivroCriar):
     with get_db() as conn:
         try:
             cursor = conn.execute(
-                "INSERT INTO livros (titulo, autor, ano_publicacao) VALUES (?, ?, ?)",
-                (livro.titulo, livro.autor, livro.ano_publicacao)
+                "INSERT INTO livros (isbn, titulo, autor, ano_publicacao) VALUES (?, ?, ?, ?)",
+                (livro.isbn, livro.titulo, livro.autor, livro.ano_publicacao)
             )
             conn.commit()
 
