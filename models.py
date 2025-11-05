@@ -1,11 +1,10 @@
-from pydantic import BaseModel
-#from typing import Optional
+from pydantic import BaseModel,Field
 
 class LivroBase(BaseModel):
     isbn: str
-    titulo: str
-    autor: str
-    ano_publicacao: int
+    titulo: str = Field(..., title="Título do Livro", description="Nome completo do livro", min_length=3)
+    autor: str = Field(..., title="Autor", description="Nome completo do autor")
+    ano_publicacao: int = Field(..., ge=1900, le=2025, description="Ano em que o livro foi publicado")
 
 
 class LivroCriar(LivroBase):
