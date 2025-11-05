@@ -2,7 +2,7 @@ from pydantic import BaseModel
 #from typing import Optional
 
 class LivroBase(BaseModel):
-    id: int
+    isbn: str
     titulo: str
     autor: str
     ano_publicacao: int
@@ -17,4 +17,5 @@ class LivroAtualizar(LivroBase):
 class LivroResposta(LivroBase):
     pass
     class Config:
+
         from_attributes = True
