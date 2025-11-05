@@ -30,42 +30,6 @@ def listar_livros():
         livros = [dict(row) for row in cursor.fetchall()]
         return livros
 
-# ---------------------------------inicio teste---------------------------------
-
-    # Cria dados fictícios para testes
-livros_dummy = [
-    {"id": 1, "titulo": "Livro 1", "autor": "Autor 1", "ano_publicacao": 2020},
-    {"id": 2, "titulo": "Livro 2", "autor": "Autor 2", "ano_publicacao": 2021},
-    {"id": 3, "titulo": "Livro 3", "autor": "Autor 3", "ano_publicacao": 2022},
-    {"id": 4, "titulo": "Livro 4", "autor": "Autor 4", "ano_publicacao": 2023}
-]
-
-# Usa os dados fictícios para testes
-
-
-def test_listar_livros():
-    resposta = listar_livros()
-    assert resposta == livros_dummy
-
-
-def test_obter_livro():
-    for livro in livros_dummy:
-        resposta = obter_livro(livro["id"])
-        assert resposta == livro
-
-
-def test_criar_livro():
-    novo_livro = {"id": 5, "titulo": "Livro 5",
-                  "autor": "Autor 5", "ano_publicacao": 2024}
-    resposta = criar_livro(novo_livro)
-    assert resposta["id"] == 5
-    assert resposta["titulo"] == "Livro 5"
-    assert resposta["autor"] == "Autor 5"
-    assert resposta["ano_publicacao"] == 2024
-
-# Continue testando para os outros endpoints
-
-# ---------------------------------fim teste---------------------------------
 
 # ==================== GET /livros/{livro_id} ====================
 

@@ -1,5 +1,6 @@
-from pydantic import BaseModel
-#from typing import Optional
+from pydantic import BaseModel, Field
+# from typing import Optional
+
 
 class LivroBase(BaseModel):
     isbn: str
@@ -11,11 +12,14 @@ class LivroBase(BaseModel):
 class LivroCriar(LivroBase):
     pass
 
+
 class LivroAtualizar(LivroBase):
     pass
 
+
 class LivroResposta(LivroBase):
     pass
+
     class Config:
 
         from_attributes = True
