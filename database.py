@@ -21,6 +21,7 @@ def init_db():
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS livros (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+                isbn VARCHAR(150),
                 titulo TEXT NOT NULL,
                 autor TEXT NOT NULL,
                 ano_publicacao INTEGER NOT NULL
