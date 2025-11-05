@@ -8,7 +8,7 @@ from routers import livros
 app = FastAPI(
     title="Sistema de Gestão de Livros",
     description="API REST para gerir livros",
-    version="0.0.1",
+    version="2.0.0",
     docs_url="/docs",  # Documentação Swagger
     redoc_url="/redoc"  # Documentação alternativa ReDoc
 )
