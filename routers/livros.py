@@ -65,6 +65,16 @@ def criar_livro(livro: LivroCriar):
     **Status de Sucesso:** 201 Created
     """
     with get_db() as conn:
+        # Verifica se o livro já existe
+        cursor = conn.execute("SELECT * FROM livros WHERE isbn = ?", (livro.isbn,))
+        existing_book = cursor.fetchone()
+
+        if existing_book:
+            raise HTTPException(
+                status_code=400,
+                detail="Erro ao criar livro: ISBN já existe"
+            )
+
         try:
             cursor = conn.execute(
                 "INSERT INTO livros (isbn, titulo, autor, ano_publicacao) VALUES (?, ?, ?, ?)",
