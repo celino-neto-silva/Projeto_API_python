@@ -1,3 +1,7 @@
+#  Grupo: Projeto_API_Livros
+#  Membros: Alexandre, Lucas, Katherine, Paulo
+#  Data: 2025-11-05
+
 from fastapi import FastAPI
 
 
@@ -51,4 +55,5 @@ def health_check():
     """
     Verifica se a API está saudável e operacional.
     """
+
     return {"status": "ok", "mensagem": "API funcionando perfeitamente!"}
